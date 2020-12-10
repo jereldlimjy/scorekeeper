@@ -19,14 +19,15 @@ function updateScores(player, opponent) {
 	if (!isGameOver) {
 		player.score++;
 		player.display.innerText = player.score;
-	} if (player.score === targetScore) {
-		isGameOver = true;
-		player.display.classList.add('has-text-success');
-		opponent.display.classList.add('has-text-danger');
-		player.button.disabled = true;
-		opponent.button.disabled = true;
+		
+		if (player.score === targetScore) {
+			isGameOver = true;
+			player.display.classList.add('has-text-success');
+			opponent.display.classList.add('has-text-danger');
+			player.button.disabled = true;
+			opponent.button.disabled = true;
+		}
 	}
-
 }
 
 p1.button.addEventListener('click', () => {
